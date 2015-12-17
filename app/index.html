@@ -12,6 +12,7 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -34,29 +35,65 @@
         </ul>
         <h3 class="text-muted">carbon calculator jquery</h3>
       </div>
-      <section class="heading">碳排放计算器
+      <section class="heading">
+        <h1>碳排放计算器</h1>
       </section>
       <section class="screen">
+        <div class="jumbotron">
+          您本月的碳排放量为 <h2>230</h2> kg CO2e
+        </div>
       </section>
       <section class="row cloth">
         <!-- <div id="clothSlider" class="col-lg-6"></div> -->
-        <div class="col-md-4 col-xs-4">本月</div>
         <div class="col-md-4 col-xs-4">
-          <div class="clothSlider"></div>
+          <img src="images/cloth.svg"/>
         </div>
         <div class="col-md-4 col-xs-4">
-          <div class="clothSlider"></div>
+          <div class="rdSlider" id="cloth1"></div>
+        </div>
+        <div class="col-md-4 col-xs-4">
+          <div class="rdSlider" id="cloth2"></div>
         </div>
       </section>
       <section class="row food">
-        <div class="col-lg-6">
+        <div class="col-md-4 col-xs-4">
+          <img src="images/cloth.svg"/>
+        </div>
+        <div class="col-md-4 col-xs-4">
+          <div class="rdSlider" id="food1"></div>
+        </div>
+        <div class="col-md-4 col-xs-4">
+          <div class="rdSlider" id="food2"></div>
+        </div>
       </section>
       <section class="row house">
-        <div class="col-lg-6">
+        <div class="col-md-4 col-xs-4">
+          <img src="images/cloth.svg"/>
+        </div>
+        <div class="col-md-8 col-xs-8 house-slider">
+          <input id="house1" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-sl
+          ider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+          <input id="house2" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+          <input id="house3" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+          <input id="house4" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+        </div>
       </section>
       <section class="row transport">
+        <div class="col-md-4 col-xs-4">
+          <img src="images/cloth.svg"/>
+        </div>
+        <div class="col-md-4 col-xs-4 transport-button">
+          <button type="button" class="btn btn-primary">MTR</button>
+          <button type="button" class="btn btn-primary">的士</button>
+          <button type="button" class="btn btn-primary">巴士</button>
+          <button type="button" class="btn btn-primary">私家車</button>
+          <button type="button" class="btn btn-primary">小巴</button>
+          <button type="button" class="btn btn-primary">單車</button>
+        </div>
+        <div class="col-md-4 col-xs-4">
+          <div class="rdSlider"></div>
+        </div>
       </section>
-        
 
           
         </div>
@@ -71,6 +108,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

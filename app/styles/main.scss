@@ -39,8 +39,7 @@ body {
 }
 
 
-
-#clothSlider {
+.rdSlider {
   .rs-range-color  {
     background-color: #33B5E5;
   }
@@ -63,6 +62,18 @@ body {
     border-color: transparent;
   }
 } 
+
+.verticleSlider {
+  margin-right: 20px
+}
+
+.house-slider {
+  display: flex;
+  justify-content: space-around;
+}
+
+.transport-button {
+}
 
 
 /* Custom page footer */

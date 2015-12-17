@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "seiyria-bootstrap-slider": "~5.3.3"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "chai": "~3.4.2",
-    "mocha": "~2.3.4"
+    "mocha": "~2.3.4",
+    "seiyria-bootstrap-slider": "~5.3.3"
   }
 }

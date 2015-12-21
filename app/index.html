@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>carbon calculator jquery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,84 +18,86 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link href="https://cdn.jsdelivr.net/jquery.roundslider/1.0/roundslider.min.css" rel="stylesheet" />
     <!-- endbuild -->
+    <link href="https://cdn.jsdelivr.net/jquery.roundslider/1.0/roundslider.min.css" rel="stylesheet" />
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    
     <div class="container">
-      <div class="header">
+      <!-- <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
         <h3 class="text-muted">carbon calculator jquery</h3>
-      </div>
+      </div> -->
       <section class="heading">
         <h1>碳排放计算器</h1>
       </section>
       <section class="screen">
         <div class="jumbotron">
-          您本月的碳排放量为 <h2>230</h2> kg CO2e
+          您本月的碳排放量为 <span id="totalNumber">230</span> kg CO2e
         </div>
       </section>
       <section class="row cloth">
         <!-- <div id="clothSlider" class="col-lg-6"></div> -->
         <div class="col-md-4 col-xs-4">
           <img src="images/cloth.svg"/>
+          <div>本月</div>
         </div>
         <div class="col-md-4 col-xs-4">
           <div class="rdSlider" id="cloth1"></div>
+          <div>購買新衣服</div>
         </div>
         <div class="col-md-4 col-xs-4">
           <div class="rdSlider" id="cloth2"></div>
+          <div>回收舊衣服</div>
         </div>
       </section>
       <section class="row food">
         <div class="col-md-4 col-xs-4">
-          <img src="images/cloth.svg"/>
+          <img src="images/food.svg"/>
+          <div>本月</div>
         </div>
         <div class="col-md-4 col-xs-4">
           <div class="rdSlider" id="food1"></div>
+          <div>吃肉類食物</div>
         </div>
         <div class="col-md-4 col-xs-4">
           <div class="rdSlider" id="food2"></div>
+          <div>浪費食物</div>
         </div>
       </section>
       <section class="row house">
         <div class="col-md-4 col-xs-4">
-          <img src="images/cloth.svg"/>
+          <img src="images/house.svg"/>
         </div>
         <div class="col-md-8 col-xs-8 house-slider">
-          <input id="house1" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-sl
-          ider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
-          <input id="house2" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
-          <input id="house3" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
-          <input id="house4" class="verticleSlider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+          <input id="house1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house1Value"></span>
+          <input id="house2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house2Value"></span>
+          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house3Value"></span>
+          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house4Value"></span>
         </div>
       </section>
       <section class="row transport">
         <div class="col-md-4 col-xs-4">
-          <img src="images/cloth.svg"/>
+          <img src="images/transport.svg"/>
         </div>
         <div class="col-md-4 col-xs-4 transport-button">
-          <button type="button" class="btn btn-primary">MTR</button>
-          <button type="button" class="btn btn-primary">的士</button>
-          <button type="button" class="btn btn-primary">巴士</button>
-          <button type="button" class="btn btn-primary">私家車</button>
-          <button type="button" class="btn btn-primary">小巴</button>
-          <button type="button" class="btn btn-primary">單車</button>
+          <button type="button" class="btn btn-primary" id="mtr">MTR</button>
+          <button type="button" class="btn btn-primary" id="taxi">的士</button>
+          <button type="button" class="btn btn-primary" id="bus">巴士</button>
+          <button type="button" class="btn btn-primary" id="car">私家車</button>
+          <button type="button" class="btn btn-primary" id="minibus">小巴</button>
+          <button type="button" class="btn btn-primary" id="bike">單車</button>
         </div>
         <div class="col-md-4 col-xs-4">
-          <div class="rdSlider"></div>
+          <div class="rdSlider" id="transport"></div>
         </div>
       </section>
-
           
         </div>
       </div>
@@ -127,10 +130,9 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-    
+    <script src="https://cdn.jsdelivr.net/jquery.roundslider/1.0/roundslider.min.js"></script>
 
     <!-- build:js scripts/main.js -->
-    <script src="https://cdn.jsdelivr.net/jquery.roundslider/1.0/roundslider.min.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 

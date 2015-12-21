@@ -17,6 +17,18 @@ body {
   padding-bottom: 20px;
 }
 
+h1 {
+  margin-top: 0
+}
+.cloth, .food, .house, .transport {
+  border: solid black 1px;
+  margin-bottom: 10px
+}
+
+.col-md-4 img, .col-xs-4 img {
+  width: 60%
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -38,6 +50,9 @@ body {
   }
 }
 
+#totalNumber {
+  font-size: 40px;
+}
 
 .rdSlider {
   .rs-range-color  {
@@ -63,16 +78,41 @@ body {
   }
 } 
 
+.slider.slider-horizontal {
+    width: 90%;
+    margin-bottom: 20px;
+    .slider-track {
+      height: 5px
+    }
+}
+
 .verticleSlider {
   margin-right: 20px
 }
 
-.house-slider {
-  display: flex;
-  justify-content: space-around;
+.slider.slider-horizontal .slider-handle {
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
 }
 
-.transport-button {
+.slider-selection {
+    background-image: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.slider-track {
+    position: absolute;
+    cursor: pointer;
+    background-image: none;
+    background-color: #C2E9F7;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 4px;
+}
+.slider-selection {
+  background-image: -webkit-linear-gradient(top, #33B5E5 0%, #33B5E5 100%);
 }
 
 
@@ -111,5 +151,20 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .rdSlider {
+    height: 120px !important;
+    width: 120px !important;
+  }
+  .rs-container {
+    height: 120px !important;
+    width: 120px !important;
+  }
+  .jumbotron {
+    padding: 10px;
   }
 }

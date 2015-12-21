@@ -57,6 +57,14 @@ module.exports = function (grunt) {
       }
     },
 
+    'gh-pages': {
+       options: {
+         base: 'dist',
+         branch: 'gh-pages',
+       },
+       src: '**/*'
+     },
+
     browserSync: {
       options: {
         notify: false,
@@ -344,6 +352,18 @@ module.exports = function (grunt) {
           cwd: '.',
           src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
           dest: '<%= config.dist %>'
+        },{
+          expand: true,
+          dot: true,
+          cwd: '.',
+          src: 'bower_components/jquery/dist/*',
+          dest: '<%= config.dist %>'
+        },{
+          expand: true,
+          dot: true,
+          cwd: '.',
+          src: 'bower_components/seiyria-bootstrap-slider/js/*',
+          dest: '<%= config.dist %>'
         }]
       }
     },
@@ -383,6 +403,7 @@ module.exports = function (grunt) {
     ]);
   });
 
+  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.registerTask('server', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run([target ? ('serve:' + target) : 'serve']);
@@ -423,4 +444,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('deploy:prod', ['gh-pages']);
 };

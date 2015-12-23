@@ -38,64 +38,99 @@
         <h1>碳排放计算器</h1>
       </section>
       <section class="screen">
-        <div class="jumbotron">
+        <div class="jumbotron middle">
           您本月的碳排放量为 <span id="totalNumber">230</span> kg CO2e
         </div>
       </section>
       <section class="row cloth">
         <!-- <div id="clothSlider" class="col-lg-6"></div> -->
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-4 col-xs-4 middle">
           <img src="images/cloth.svg"/>
-          <div>本月</div>
+          <div class="time">本月</div>
         </div>
-        <div class="col-md-4 col-xs-4">
-          <div class="rdSlider" id="cloth1"></div>
+        <div class="col-md-4 col-xs-4 middle">
+          <div class="rdSlider center" id="cloth1"></div>
           <div>購買新衣服</div>
         </div>
-        <div class="col-md-4 col-xs-4">
-          <div class="rdSlider" id="cloth2"></div>
+        <div class="col-md-4 col-xs-4 middle">
+          <div class="rdSlider center" id="cloth2"></div>
           <div>回收舊衣服</div>
         </div>
       </section>
       <section class="row food">
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-4 col-xs-4 middle">
           <img src="images/food.svg"/>
-          <div>本月</div>
+          <div class="time">每日</div>
         </div>
-        <div class="col-md-4 col-xs-4">
-          <div class="rdSlider" id="food1"></div>
+        <div class="col-md-4 col-xs-4 middle">
+          <div class="rdSlider center" id="food1"></div>
           <div>吃肉類食物</div>
         </div>
-        <div class="col-md-4 col-xs-4">
-          <div class="rdSlider" id="food2"></div>
+        <div class="col-md-4 col-xs-4 middle">
+          <div class="rdSlider center" id="food2"></div>
           <div>浪費食物</div>
         </div>
       </section>
       <section class="row house">
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-4 col-xs-4 middle">
           <img src="images/house.svg"/>
+          <div class="middle">本月</div>
         </div>
-        <div class="col-md-8 col-xs-8 house-slider">
-          <input id="house1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house1Value"></span>
-          <input id="house2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house2Value"></span>
-          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house3Value"></span>
-          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span id="house4Value"></span>
+        <div class="col-md-8 col-xs-8 house-slider ">
+          <input id="house1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span> 水 </span><span class="notation" id="house1Value" value="0"></span><span>度</span>
+          <input id="house2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span> 電 </span><span class="notation" id="house2Value" value="0"></span><span>度</span>
+          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span> 煤氣 </span><span class="notation" id="house3Value" value="0"></span><span>度</span>
+          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span> 石油氣 </span><span class="notation" id="house4Value" value="0"></span><span>度</span>
         </div>
       </section>
       <section class="row transport">
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-4 col-xs-4 middle">
           <img src="images/transport.svg"/>
+          <div class="time">每日</div>
         </div>
-        <div class="col-md-4 col-xs-4 transport-button">
-          <button type="button" class="btn btn-primary" id="mtr">MTR</button>
-          <button type="button" class="btn btn-primary" id="taxi">的士</button>
-          <button type="button" class="btn btn-primary" id="bus">巴士</button>
-          <button type="button" class="btn btn-primary" id="car">私家車</button>
-          <button type="button" class="btn btn-primary" id="minibus">小巴</button>
-          <button type="button" class="btn btn-primary" id="bike">單車</button>
+        <div class="col-md-4 col-xs-4 transport-button middle">
+          <!-- <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info" id="mtr">MTR</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info" id="taxi">的士</button>
+            </div>
+          </div>
+          <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info" id="mtr">巴士</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info" id="taxi">私家車</button>
+            </div>
+          </div>
+          <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info" id="minibus">小巴</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info" id="bike">單車</button>
+            </div>
+          </div> -->
+          <div class="btn-group dropup">
+            <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected">
+              MTR <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a id="mtr">MTR</a></li>
+              <li><a id="taxi">的士</a></li>
+              <li><a id="bus">巴士</a></li>
+              <li><a id="minibus">小巴</a></li>
+              <li><a id="car">私家車</a></li>
+              <li><a id="bike">單車</a></li>
+            </ul>
+          </div>
+          <div>常用交通工具</div>
         </div>
-        <div class="col-md-4 col-xs-4">
-          <div class="rdSlider" id="transport"></div>
+        <div class="col-md-4 col-xs-4 middle">
+          <div class="rdSlider center" id="transport"></div>
+          <div>所花費用/行駛距離</div>
         </div>
       </section>
           

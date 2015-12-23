@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-656 737 140 140" style="enable-background:new -656 737 140 140;" xml:space="preserve">
+	 viewBox="-329 331 140 140" style="enable-background:new -329 331 140 140;" xml:space="preserve">
 <style type="text/css">
-	.st0{opacity:0.4;}
-	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st2{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#0A4456;stroke-width:2;stroke-miterlimit:10;}
-	.st4{fill:#FFFFFF;stroke:#0A4456;stroke-width:2;stroke-miterlimit:10;}
-	.st5{fill:none;stroke:#094456;stroke-width:2;stroke-miterlimit:10;}
-	.st6{fill:#FFFFFF;stroke:#094456;stroke-width:2;stroke-miterlimit:10;}
+	.st0{fill:#D5C9BE;stroke:#80786E;stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#80786E;stroke-width:2;stroke-miterlimit:10;}
+	.st2{fill:#E5DCD3;stroke:#80786E;stroke-width:2;stroke-miterlimit:10;}
 </style>
 <g>
-	<path class="st5" d="M-565.6,839.7h-34.8c-0.5,0-0.8-0.4-0.8-0.8v-28.2c0-1.8,1.4-3.2,3.2-3.2h31.4c0.5,0,1,0.4,1,1V839.7z"/>
-	<path class="st5" d="M-530.5,839.7h-34.8v-31c0-0.7,0.5-1.2,1.2-1.2h31.2c1.8,0,3.2,1.4,3.2,3.2v28.2
-		C-529.7,839.3-530,839.7-530.5,839.7z"/>
-	<path class="st5" d="M-601.5,821.5h-5.8c-1.5,0-2.7,1.2-2.7,2.7v21.2c0,1.5,1.2,2.7,2.7,2.7h84.2c1.5,0,2.7-1.2,2.7-2.7v-21.2
+	<path class="st0" d="M-273.7,420.4h-5.8c-1.5,0-2.7,1.2-2.7,2.7v21.2c0,1.5,1.2,2.7,2.7,2.7h84.2c1.5,0,2.7-1.2,2.7-2.7v-21.2
 		c0-1.5-1.2-2.7-2.7-2.7h-6.4"/>
-	<line class="st5" x1="-600.6" y1="830.2" x2="-530.1" y2="830.2"/>
-	<line class="st5" x1="-654.6" y1="857.5" x2="-519" y2="857.5"/>
-	<line class="st5" x1="-605.5" y1="857" x2="-605.5" y2="848.4"/>
-	<line class="st5" x1="-524.8" y1="857" x2="-524.8" y2="848.4"/>
-	<line class="st5" x1="-650.9" y1="830.2" x2="-622.9" y2="830.2"/>
-	<line class="st5" x1="-636.8" y1="830.2" x2="-636.8" y2="857.2"/>
-	<line class="st5" x1="-622.6" y1="857.1" x2="-636.6" y2="844.4"/>
-	<line class="st5" x1="-651.3" y1="857.6" x2="-636.8" y2="844.1"/>
-	<rect x="-603.8" y="749.9" class="st5" width="41.2" height="28.3"/>
-	<path class="st5" d="M-582.9,750.1c4.9,4.3,4.3,13.3-0.7,18.5c-5.3,5.4-16.3,5.2-20.2-2.2"/>
-	<path class="st5" d="M-643.3,830.2l-2.3-12.3c-0.2-1,0.6-1.8,1.5-1.8h15.2c1,0,1.7,0.9,1.5,1.8l-2.2,12.3H-643.3z"/>
-	<path class="st5" d="M-639.1,815.7c0,0-1.2-17.3-2.4-20.4"/>
-	<path class="st5" d="M-632.6,799.6c-1,2.9-1.7,16.6-1.7,16.6"/>
-	<path class="st5" d="M-650.7,777c-2,1.3-0.9,14.1,3.1,16.7s6.2,1.6,8,0.1c1.8-1.5,2.4-6.8-0.7-10.2S-649,775.9-650.7,777z"/>
-	<path class="st5" d="M-624.7,786.3c-2.2,0-9,4.7-9.3,8.3s2.1,6.2,4.9,5.8s4.7-3.3,5.3-7.7C-623.3,788.2-623.1,786.3-624.7,786.3z"
+	<line class="st1" x1="-272.8" y1="429.1" x2="-202.3" y2="429.1"/>
+	<line class="st1" x1="-326.8" y1="456.4" x2="-191.2" y2="456.4"/>
+	<line class="st1" x1="-277.7" y1="455.9" x2="-277.7" y2="447.3"/>
+	<line class="st1" x1="-197" y1="455.9" x2="-197" y2="447.3"/>
+	<line class="st1" x1="-323.1" y1="429.1" x2="-295.1" y2="429.1"/>
+	<line class="st1" x1="-309" y1="429.1" x2="-309" y2="456.1"/>
+	<line class="st1" x1="-294.8" y1="456" x2="-308.8" y2="443.3"/>
+	<line class="st1" x1="-323.5" y1="456.5" x2="-309" y2="443"/>
+	<rect x="-276" y="348.8" class="st2" width="41.2" height="28.3"/>
+	<path class="st1" d="M-255.1,349c4.9,4.3,4.3,13.3-0.7,18.5c-5.3,5.4-16.3,5.2-20.2-2.2"/>
+	<path class="st0" d="M-315.5,429.1l-2.3-12.3c-0.2-1,0.6-1.8,1.5-1.8h15.2c1,0,1.7,0.9,1.5,1.8l-2.2,12.3H-315.5z"/>
+	<path class="st1" d="M-311.3,414.6c0,0-1.2-17.3-2.4-20.4"/>
+	<path class="st1" d="M-304.8,398.5c-1,2.9-1.7,16.6-1.7,16.6"/>
+	<path class="st0" d="M-322.9,375.9c-2,1.3-0.9,14.1,3.1,16.7s6.2,1.6,8,0.1s2.4-6.8-0.7-10.2S-321.2,374.8-322.9,375.9z"/>
+	<path class="st0" d="M-296.9,385.2c-2.2,0-9,4.7-9.3,8.3s2.1,6.2,4.9,5.8s4.7-3.3,5.3-7.7C-295.5,387.1-295.3,385.2-296.9,385.2z"
 		/>
+	<path class="st2" d="M-237.8,438.6h-34.8c-0.5,0-0.8-0.4-0.8-0.8v-28.2c0-1.8,1.4-3.2,3.2-3.2h31.4c0.5,0,1,0.4,1,1L-237.8,438.6
+		L-237.8,438.6z"/>
+	<path class="st2" d="M-202.7,438.6h-34.8v-31c0-0.7,0.5-1.2,1.2-1.2h31.2c1.8,0,3.2,1.4,3.2,3.2v28.2
+		C-201.9,438.2-202.2,438.6-202.7,438.6z"/>
 </g>
 </svg>

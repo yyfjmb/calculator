@@ -61,9 +61,26 @@ module.exports = function (grunt) {
        options: {
          base: 'dist',
          branch: 'gh-pages',
+         repo: 'git@github.com:initiumlab/co2-calculator.git'
        },
        src: '**/*'
      },
+
+     rsync: {
+      options: {
+        args: ['--verbose'],
+        exclude: ['.git*','*.scss','node_modules'],
+        recursive: true
+      },
+      showcase: {
+        options: {
+          src: './dist/',
+          dest: '/home/vagrant/web/carboncalculator',
+          host: 'showcase',
+          delete: true // Careful this option could cause data loss, read the docs!
+        }
+      }
+    },
 
     browserSync: {
       options: {
@@ -344,7 +361,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'CNAME'
           ]
         }, {
           expand: true,
@@ -404,6 +422,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-rsync');
   grunt.registerTask('server', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run([target ? ('serve:' + target) : 'serve']);
@@ -446,4 +465,5 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('deploy:prod', ['gh-pages']);
+  grunt.registerTask('deploy:staging', ['rsync']);
 };

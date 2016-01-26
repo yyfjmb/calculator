@@ -15,6 +15,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #E8EBEF;
 }
 
 h1 {
@@ -24,9 +25,28 @@ h1 {
 .row {
 }
 
+.screen {
+  margin-top: 80px;
+}
+
+.explain {
+  margin-top: -10px
+}
+
+#cloth1, #cloth2, #food1, #food2 {
+  height: 140px !important;
+  margin-top: 20px;
+}
+
 .cloth, .food, .house, .transport {
-  border: solid black 1px;
-  margin-bottom: 10px
+}
+
+.bg-grey {
+  background-color: #F3F2F4;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .col-md-4 img, .col-xs-4 img {
@@ -64,7 +84,9 @@ h1 {
   z-index: 100;
   left: 15px;
   top: 15px;
-  right: 15px
+  right: 15px;
+  background-image: url("../images/background.png");
+  background-size: 200px 60px;
 }
 
 .cloth {
@@ -77,40 +99,48 @@ h1 {
 
 .rdSlider {
   .rs-range-color  {
-    background-color: #33B5E5;
+    background-color: #008282;
   }
   .rs-path-color  {
-    background-color: #C2E9F7;
+    background-color: #82D6D8;
   }
   .rs-handle  {
-    background-color: #C2E9F7;
+    background-color: #82D6D8;
     padding: 7px;
-    border: 2px solid #C2E9F7;
+    border: 2px solid #82D6D8;
   }
   .rs-handle.rs-focus  {
-    border-color: #33B5E5;
+    border-color: #008282;
   }
   .rs-handle:after  {
-    border-color: #33B5E5;
-    background-color: #33B5E5;
+    border-color: #008282;
+    background-color: #008282;
   }
   .rs-border  {
     border-color: transparent;
   }
 } 
 
+.rs-bar .rs-seperator {
+  display: none !important
+}
+
 .slider.slider-horizontal {
     width: 70%;
-    margin: 10px auto 0 auto;
+    margin: 0px 15% -5px 15%;
     .slider-track {
       height: 5px
     }
 }
 
+.house-slider {
+  padding-top: 20px
+}
+
 .rdSlider .rs-handle {
-    background-color: #33B5E5;
+    background-color: #008282;
     padding: 7px;
-    border: 2px solid #33B5E5;
+    border: 2px solid #008282;
 }
 
 .verticleSlider {
@@ -133,13 +163,18 @@ h1 {
     position: absolute;
     cursor: pointer;
     background-image: none;
-    background-color: #C2E9F7;
+    background-color: #82D6D8;
     -webkit-box-shadow: none;
     box-shadow: none;
     border-radius: 4px;
 }
 .slider-selection {
-  background-image: -webkit-linear-gradient(top, #33B5E5 0%, #33B5E5 100%);
+  background-image: -webkit-linear-gradient(top, #008282 0%, #008282 100%);
+}
+
+.slider-handle {
+  background-color: #008282;
+  background-image: none;
 }
 
 .btn-group {
@@ -175,7 +210,7 @@ li a {
 }
 
 .jumbotron {
-    padding: 10px;
+    padding: 30px;
   }
 
 
@@ -185,6 +220,9 @@ li a {
     max-width: 730px;
   }
 
+  .bg-grey, .bg-white{
+    height: 180px;
+  }
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -208,20 +246,28 @@ li a {
   width: 20%
 }
 
+.measure {
+  margin-left: 60%;
+  line-height: 15px
+}
+
 
 @media screen and (max-width: 768px) {
   .rdSlider {
-    height: 100px !important;
-    width: 100px !important;
+    height: 80px !important;
+    width: 80px !important;
   }
   .rs-container {
-    height: 100px !important;
-    width: 100px !important;
+    height: 80px !important;
+    width: 80px !important;
   }
   .col-md-4 img, .col-xs-4 img {
     height: 100px;
   }
   .cloth {
     margin-top: 60px;
+  }
+  .bg-grey, .bg-white{
+    height: 120px;
   }
 }

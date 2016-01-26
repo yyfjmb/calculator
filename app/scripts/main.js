@@ -1,5 +1,5 @@
 $("#cloth1").roundSlider({
-    radius: 80,
+    radius: 60,
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
@@ -10,7 +10,7 @@ $("#cloth1").roundSlider({
 })
 
 $("#cloth2").roundSlider({
-    radius: 80,
+    radius: 60,
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
@@ -25,22 +25,22 @@ function tooltipVal1(args) {
 }
 
 $("#food1").roundSlider({
-    radius: 80,
+    radius: 60,
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
-    value: 100,
+    value: 99,
     drag: "slideChange",
     max: 1000,
     tooltipFormat: "tooltipVal2"
 })
 
 $("#food2").roundSlider({
-    radius: 80,
+    radius: 60,
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
-    value: 100,
+    value: 99,
     drag: "slideChange",
     max: 1000,
     tooltipFormat: "tooltipVal2"
@@ -51,7 +51,7 @@ function tooltipVal2(args) {
 }
 
 $("#transport").roundSlider({
-    radius: 80,
+    radius: 60,
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
@@ -62,11 +62,21 @@ $("#transport").roundSlider({
 })
 
 function tooltipVal3(args) {
-    return + args.value + " HKD";
-}
-
-function tooltipVal4(args) {
-    return + args.value + " km";
+    var unitMapping = {
+        "mtr": "HKD",
+        "bus": "HKD",
+        "minibus": "HKD",
+        "taxi": "HKD",
+        "car": "km",
+        "bike": "km"
+    }
+    var transportId = "mtr"
+    $(".dropdown-menu a").each(function(idx, elem) {
+        if(!$(elem).hasClass("selected")) 
+            return
+        transportId = $(elem).attr("id")
+    })
+    return + args.value + " " + unitMapping[transportId]
 }
 
 var cloth1 = $("#cloth1").data("roundSlider")
@@ -86,52 +96,80 @@ $("#house4").slider({min: 0, max: 40, step: 1, value: 0, tooltip:'hide'});
 
 var coefficient = 0.5
 
+
+
+$(".dropdown-menu a").click(function() {
+    var transportId = "mtr"
+    var nameMapping = {
+        "mtr": "MTR",
+        "taxi": "的士",
+        "bus": "巴士",
+        "minibus": "小巴",
+        "car": "私家車",
+        "bike": "單車"
+    }
+    var noteMapping = {
+        "mtr": "所花費用",
+        "taxi": "所花費用",
+        "bus": "所花費用",
+        "minibus": "所花費用",
+        "car": "行駛距離",
+        "bike": "行駛距離"
+    }
+    $(".dropdown-menu a").each(function(idx, elem) {
+        $(elem).removeClass('selected')
+    })
+    $(this).addClass('selected')
+    transportId = $(this).attr("id")
+    $(":button").html(nameMapping[transportId] + " <span class='caret'></span>")
+    $("#transportnote").text(noteMapping[transportId])
+})
+
 $("#mtr").click(function(){
     $("#transport").roundSlider({
         value: 3,
         max: 50
     })
-    $("#selected").text("MTR")
     coefficient = 0.0114*30
 })
 
 $("#taxi").click(function(){
     $("#transport").roundSlider({
         value: 25,
-        max: 200})
-    $("#selected").text("的士")
+        max: 200
+    })
     coefficient = 0.0414*30
 })
 
 $("#bus").click(function(){
     $("#transport").roundSlider({
         value: 5,
-        max: 50})
-    $("#selected").text("巴士")
+        max: 50
+    })
     coefficient = 0.0493*30
 })
 
 $("#car").click(function(){
     $("#transport").roundSlider({
         value: 2,
-        max: 40})
-    $("#selected").text("汽車")
+        max: 40,
+    })
     coefficient = 0.2119*30
 })
 
 $("#minibus").click(function(){
     $("#transport").roundSlider({
         value: 5,
-        max: 50})
-    $("#selected").text("小巴")
+        max: 50,
+    })
     coefficient = 0.094*30
 })
 
 $("#bike").click(function(){
     $("#transport").roundSlider({
         value: 60,
-        max: 600})
-    $("#selected").text("單車")
+        max: 600
+    })
     coefficient = 0
 })
 

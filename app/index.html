@@ -77,10 +77,10 @@
           <div class="middle explain">本月</div>
         </div>
         <div class="col-md-8 col-xs-8 house-slider bg-white">
-          <input id="house1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house1Value" value="0"></span> 度水 </div>
-          <input id="house2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house2Value" value="0"></span> 度電</div>
-          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"></span><span class="notation" id="house3Value" value="0"></span> 度煤氣</div>
-          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house4Value" value="0"></span> 度石油氣</div>
+          <input id="house1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house1Value" value="0">0</span>  度水</div>
+          <input id="house2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house2Value" value="0">0</span>  度電</div>
+          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"></span><span class="notation" id="house3Value" value="0">0</span>  度煤氣</div>
+          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house4Value" value="0">0</span>  度石油氣</div>
         </div>
       </section>
       <section class="row transport">
@@ -88,7 +88,7 @@
           <img src="images/transport.svg"/>
           <div class="time explain">每日</div>
         </div>
-        <div class="col-md-4 col-xs-4 transport-button middle bg-grey">
+        <div class="col-md-4 col-xs-4 transport-slider middle bg-grey">
           <!-- <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-info" id="mtr">MTR</button>
@@ -113,7 +113,7 @@
               <button type="button" class="btn btn-info" id="bike">單車</button>
             </div>
           </div> -->
-          <div class="btn-group dropup">
+          <!-- <div class="btn-group dropup">
             <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected">
               MTR <span class="caret"></span>
             </button>
@@ -125,12 +125,20 @@
               <li><a id="car">私家車</a></li>
               <li><a id="bike">單車</a></li>
             </ul>
-          </div>
-          <div>常用交通工具</div>
+          </div> -->
+          <span class="tool">MTR</span><input id="transport1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/>
+          <div class="measure"><span class="notation" id="transport1Value" value="0">0</span>  元</div>
+          <span class="tool">巴士</span><input id="transport2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/>
+          <div class="measure"><span class="notation" id="transport2Value" value="0">0</span>  元</div>
+          <span class="tool">小巴</span><input id="transport3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/>
+          <div class="measure"></span><span class="notation" id="transport3Value" value="0">0</span>  元</div>
         </div>
-        <div class="col-md-4 col-xs-4 middle bg-grey">
-          <div class="rdSlider center" id="transport"></div>
-          <div id="transportnote">所花費用</div>
+        <div class="col-md-4 col-xs-4 middle bg-grey transport-slider">
+          <!-- <div class="rdSlider center" id="transport"></div>
+          <div id="transportnote">所花費用</div> -->
+          <span class="tool">的士</span><input id="transport4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="transport4Value" value="0">0</span>  元</div>
+          <span class="tool">私家車</span><input id="transport5" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="transport5Value" value="0">0</span>  km</div>
+          <span class="tool">單車</span><input id="transport6" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="transport6Value" value="0">0</span>  km</div>
         </div>
       </section>
           

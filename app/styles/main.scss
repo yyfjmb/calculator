@@ -41,6 +41,10 @@ h1 {
 .cloth, .food, .house, .transport {
 }
 
+.transport-slider {
+  padding-top: 20px
+}
+
 .bg-grey {
   background-color: #F3F2F4;
 }
@@ -125,12 +129,58 @@ h1 {
   display: none !important
 }
 
-.slider.slider-horizontal {
+.house-slider {
+  .slider.slider-horizontal {
     width: 70%;
     margin: 0px 15% -5px 15%;
     .slider-track {
       height: 5px
     }
+  }
+  .measure {
+    margin-left: 60%;
+    line-height: 15px;
+    background: #F0EFF1;
+    margin-right: 15%;
+    text-align: center;
+    border-radius: 6px;
+    color: grey;
+    font-size: 12px;
+    span {
+      color: black;
+      font-size: 15px
+    }
+  }
+}
+
+.transport-slider {
+  .slider.slider-horizontal {
+    width: 70%;
+    margin: 0px 0% -5px 0%;
+    .slider-track {
+      height: 5px
+    }
+  }
+  .tool {
+    width: 30%;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+  }
+  .measure {
+    margin-left: 60%;
+    line-height: 15px;
+    background: white;
+    margin-right: 0%;
+    text-align: center;
+    border-radius: 6px;
+    color: grey;
+    font-size: 12px;
+    span {
+      color: black;
+      font-size: 15px
+    }
+  }
 }
 
 .house-slider {
@@ -239,16 +289,12 @@ li a {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+    color: white;
   }
 }
 
 .notation {
   width: 20%
-}
-
-.measure {
-  margin-left: 60%;
-  line-height: 15px
 }
 
 

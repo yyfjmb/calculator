@@ -34,14 +34,21 @@
         </ul>
         <h3 class="text-muted">carbon calculator jquery</h3>
       </div> -->
-      <section class="heading">
-        <h1>碳排放计算器</h1>
-      </section>
+
+      <div id="lightbox">
+        <button id="close">返回计算器</button>
+        <div class="statement">您每日的碳排放量為占用了 <span id="treeNumber"></span> 棵树木</div>
+        <div id="treeArea"></div>
+        <div class="share"> <a href="https://www.facebook.com/sharer.php?s=100&amp;u=http://twelec2016.initiumlab.com/" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600'); return false" title="分享到 facebook" class="facebook"></a> <a href="https://twitter.com/share?url=http://twelec2016.initiumlab.com/&amp;text=台灣會不會實現第三次政黨輪替？華人世界會不會有第一位女總統？太陽花兵團能不能進軍立法院？2016大選，實時計票結果，就在端傳媒！&amp;via=initiumnews" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600'); return false" title="分享到 twitter" class="twitter"></a> </div>
+      </div>
+
       <section class="screen">
-        <div class="jumbotron middle">
-          您本月的碳排放量为 <span id="totalNumber">230</span> kg CO2e
+        <div class="jumbotron center">
+          您本月的碳排放量为 <span id="totalNumber">0</span> kg CO2e
         </div>
       </section>
+
+
       <section class="row cloth">
         <!-- <div id="clothSlider" class="col-lg-6"></div> -->
         <div class="col-md-4 col-xs-4 middle bg-grey">
@@ -57,6 +64,8 @@
           <div class="explain">回收舊衣服</div>
         </div>
       </section>
+
+
       <section class="row food">
         <div class="col-md-4 col-xs-4 middle bg-white">
           <img src="images/food.svg"/>
@@ -71,6 +80,8 @@
           <div class="explain">浪費食物</div>
         </div>
       </section>
+
+
       <section class="row house">
         <div class="col-md-4 col-xs-4 middle bg-grey">
           <img src="images/house.svg"/>
@@ -83,6 +94,8 @@
           <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house4Value" value="0">0</span>  度石油氣</div>
         </div>
       </section>
+
+
       <section class="row transport">
         <div class="col-md-4 col-xs-4 middle bg-white">
           <img src="images/transport.svg"/>
@@ -126,29 +139,37 @@
               <li><a id="bike">單車</a></li>
             </ul>
           </div> -->
-          <span class="tool">MTR</span><input id="transport1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/>
+          <input id="transport1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">MTR</span>
           <div class="measure"><span class="notation" id="transport1Value" value="0">0</span>  元</div>
-          <span class="tool">巴士</span><input id="transport2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/>
+          <input id="transport2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">巴士</span>
           <div class="measure"><span class="notation" id="transport2Value" value="0">0</span>  元</div>
-          <span class="tool">小巴</span><input id="transport3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/>
+          <input id="transport3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">小巴</span>
           <div class="measure"></span><span class="notation" id="transport3Value" value="0">0</span>  元</div>
         </div>
         <div class="col-md-4 col-xs-4 middle bg-grey transport-slider">
           <!-- <div class="rdSlider center" id="transport"></div>
           <div id="transportnote">所花費用</div> -->
-          <span class="tool">的士</span><input id="transport4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="transport4Value" value="0">0</span>  元</div>
-          <span class="tool">私家車</span><input id="transport5" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="transport5Value" value="0">0</span>  km</div>
-          <span class="tool">單車</span><input id="transport6" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="transport6Value" value="0">0</span>  km</div>
+          <input id="transport4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">的士</span>
+          <div class="measure"><span class="notation" id="transport4Value" value="0">0</span>  元</div>
+          <input id="transport5" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">私家車</span>
+          <div class="measure"><span class="notation" id="transport5Value" value="0">0</span>  km</div>
+          <input id="transport6" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">單車</span>
+          <div class="measure"><span class="notation" id="transport6Value" value="0">0</span>  km</div>
         </div>
       </section>
-          
-        </div>
-      </div>
+
+      <section class="result row">
+        <button id="lightboxTrigger" type="button" class="btn btn-lg btn-block">查看计算结果</button>
+      </section>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-heart"></span> from the Initium Lab</p>
       </div>
+
+      
     </div>
+
+
     
 
     <!-- build:js(.) scripts/vendor.js -->

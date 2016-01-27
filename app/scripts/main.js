@@ -5,7 +5,7 @@ $("#cloth1").roundSlider({
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
-    value: 1,
+    value: 0,
     drag: "slideChange",
     max: 20,
     tooltipFormat: "tooltipVal1"
@@ -16,7 +16,7 @@ $("#cloth2").roundSlider({
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
-    value: 1,
+    value: 0,
     drag: "slideChange",
     max: 20,
     tooltipFormat: "tooltipVal1"
@@ -31,7 +31,7 @@ $("#food1").roundSlider({
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
-    value: 99,
+    value: 0,
     drag: "slideChange",
     max: 1000,
     tooltipFormat: "tooltipVal2"
@@ -42,7 +42,7 @@ $("#food2").roundSlider({
     width: 5,
     handleSize: "+30",
     sliderType: "min-range",
-    value: 99,
+    value: 0,
     drag: "slideChange",
     max: 1000,
     tooltipFormat: "tooltipVal2"
@@ -85,12 +85,12 @@ function tooltipVal3(args) {
 /*vertical slider*/
 
 $("#house1").slider({min: 0, max: 15, step: 1, value: 0, tooltip:'hide'});
-$("#house2").slider({min: 0, max: 500, step: 5, value: 0, tooltip:'hide'});
+$("#house2").slider({min: 0, max: 500, step: 1, value: 0, tooltip:'hide'});
 $("#house3").slider({min: 0, max: 50, step: 1, value: 0, tooltip:'hide'});
 $("#house4").slider({min: 0, max: 50, step: 1, value: 0, tooltip:'hide'});
 
 $("#transport1").slider({min: 0, max: 50, step: 1, value: 0, tooltip:'hide'});
-$("#transport2").slider({min: 0, max: 50, step: 5, value: 0, tooltip:'hide'});
+$("#transport2").slider({min: 0, max: 50, step: 1, value: 0, tooltip:'hide'});
 $("#transport3").slider({min: 0, max: 50, step: 1, value: 0, tooltip:'hide'});
 $("#transport4").slider({min: 0, max: 200, step: 1, value: 0, tooltip:'hide'});
 $("#transport5").slider({min: 0, max: 100, step: 1, value: 0, tooltip:'hide'});
@@ -188,15 +188,18 @@ var transport6 = $("#transport6")
 //     coefficient = 0
 // })
 
+var treeNumber = 0
 
 function slideChange () {
-    var total= cloth1.getValue()*4.2 - cloth2.getValue()*2.1 + food1.getValue()*0.39 + food2.getValue()*0.45*0.03 + parseFloat(house1.attr( "value" ))*0.57 + parseFloat(house2.attr( "value" ))*0.66 + parseFloat(house3.attr( "value" ))*1.75 + parseFloat(house4.attr( "value" ))*1.88 + parseFloat(transport1.attr( "value" ))*0.57 + parseFloat(transport2.attr( "value" ))*0.66 + parseFloat(transport3.attr( "value" ))*1.75 + parseFloat(transport4.attr( "value" ))*1.88 + parseFloat(transport5.attr( "value" ))*1.88 + parseFloat(transport6.attr( "value" ))*1.88
+    var total= cloth1.getValue()*4.2/30 - cloth2.getValue()*2.1/30 + food1.getValue()*0.013 + food2.getValue()*0.45*0.001 + parseFloat(house1.attr( "value" ))*0.57 + parseFloat(house2.attr( "value" ))*0.66/30 + parseFloat(house3.attr( "value" ))*1.75/30 + parseFloat(house4.attr( "value" ))*1.88/30 + parseFloat(transport1.attr( "value" ))*0.0114/30 + parseFloat(transport2.attr( "value" ))*0.0493 + parseFloat(transport3.attr( "value" ))*0.0940 + parseFloat(transport4.attr( "value" ))*0.0414 + parseFloat(transport5.attr( "value" ))*0.2119
     console.log(total.toFixed(2))
     $( "#totalNumber" ).text(total.toFixed(2))
+
+    treeNumber = (total/23).toFixed(2)
 }
 
-var verticalChange = $('.verticleSlider').on('change', function(){
-	var total= cloth1.getValue()*4.2 - cloth2.getValue()*2.1 + food1.getValue()*0.39 + food2.getValue()*0.45*0.03 + parseFloat(house1.attr( "value" )) + parseFloat(house2.attr( "value" ))*0.66 + parseFloat(house3.attr( "value" ))*1.75 + parseFloat(house4.attr( "value" ))*1.88 + parseFloat(transport1.attr( "value" ))*0.57 + parseFloat(transport2.attr( "value" ))*0.66 + parseFloat(transport3.attr( "value" ))*1.75 + parseFloat(transport4.attr( "value" ))*1.88 + parseFloat(transport5.attr( "value" ))*1.88 + parseFloat(transport6.attr( "value" ))*1.88
+var verticalChange = $('.verticleSlider').on('slide', function(){
+    var total= cloth1.getValue()*4.2/30 - cloth2.getValue()*2.1/30 + food1.getValue()*0.013 + food2.getValue()*0.45*0.001 + parseFloat(house1.attr( "value" ))*0.57 + parseFloat(house2.attr( "value" ))*0.66/30 + parseFloat(house3.attr( "value" ))*1.75/30 + parseFloat(house4.attr( "value" ))*1.88/30 + parseFloat(transport1.attr( "value" ))*0.0114/30 + parseFloat(transport2.attr( "value" ))*0.0493 + parseFloat(transport3.attr( "value" ))*0.0940 + parseFloat(transport4.attr( "value" ))*0.0414 + parseFloat(transport5.attr( "value" ))*0.2119
     console.log(total.toFixed(2))
     $( "#totalNumber" ).text(total.toFixed(2))
     $("#house1Value" ).text( $("#house1" ).attr( "value" ))
@@ -209,6 +212,31 @@ var verticalChange = $('.verticleSlider').on('change', function(){
     $("#transport4Value" ).text( $("#transport4" ).attr( "value" ))
     $("#transport5Value" ).text( $("#transport5" ).attr( "value" ))
     $("#transport6Value" ).text( $("#transport6" ).attr( "value" ))
+
+     treeNumber = (total/23).toFixed(2)
+})
+
+$('#lightboxTrigger').click(function() {
+    $('#lightbox').fadeIn(500);
+
+    console.log(treeNumber)
+
+
+    var $newimg
+    if (treeNumber > 19) {
+        treeNumber = 18
+    }
+    for(var i=0;i<parseInt(treeNumber)+1;i++) {
+        $newimg = $('<img class="tree" src="images/tree.svg" />')
+        $('#treeArea').append($newimg)
+    }
+    $('#treeArea img:last-child').css("opacity", (treeNumber-parseInt(treeNumber)))
+    $('#treeNumber').text(treeNumber)
+})
+
+$('#close').click(function() {
+    $('#lightbox').fadeOut(500)
+    $('#treeArea img').remove()
 })
 
 // $(".dropdown-menu").on('click', 'li a', function(){

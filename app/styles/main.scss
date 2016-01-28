@@ -322,34 +322,45 @@ li a {
       font-weight: bold;
     }
   }
-  .share {
+  #brandingArea {
     position: absolute;
-    left: 30%;
-    right: 30%;
-    bottom: 20%;
-  }
-  .share a.facebook {
-    width: 44px;
-    background-size: 40px 40px;
-    background-image: url(../images/share_facebook.svg);
-  }
-  .share a.twitter {
-    width: 44px;
-    background-size: 40px 40px;
-    background-image: url(../images/share_twitter.svg);
-  }
-  .share a {
-    display: inline-block;
-    height: 44px;
-    margin: 0 5px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    opacity: .6;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-  }
-  .share a:hover {
-    opacity: 1;
+    width: 100%;
+    bottom: 10%;
+    .line2 {
+      width: 20%;
+      height: 22px;
+      display: inline-block;
+      border-bottom: 1px solid black;
+      font-size: 15px;
+      line-height: 20px;
+      vertical-align: top;
+    }
+    a.logo{
+      display: inline-block;
+      height: 44px;
+      width: 44px;
+      background-size: 44px 44px;
+      background-image: url(../images/logo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    a.facebook {
+      background-image: url(../images/share_facebook.svg);
+    }
+    a.twitter {
+      background-image: url(../images/share_twitter.svg);
+    }
+    a.share {
+      width: 44px;
+      background-size: 32px 32px;
+      display: inline-block;
+      height: 44px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .share a:hover {
+      opacity: 1;
+    }
   }
   button {
     height: 35px;
@@ -374,8 +385,8 @@ li a {
   .tree {
     background-image: url("../images/tree.svg");
     background-size: 100% 100%;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     display: inline-block;
   }
   .narrow {
@@ -541,12 +552,12 @@ li a {
       bottom: 10%;
     }
     .share a.facebook {
-      width: 22px;
-      background-size: 20px 20px;
+      width: 33px;
+      background-size: 30px 30px;
     }
     .share a.twitter {
-      width: 22px;
-      background-size: 20px 20px;
+      width: 33px;
+      background-size: 30px 30px;
     }
     .statement {
       font-size: 14px;

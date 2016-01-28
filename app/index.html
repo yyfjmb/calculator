@@ -2,13 +2,13 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title>carbon calculator jquery</title>
+    <title>碳排放計算器 | 端傳媒</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:type" content="article"> <meta property="og:url" content="http://carboncalc.initiumlab.com/"> <meta property="og:title" content="碳排放計算器">
     <meta property="og:description" content="您知道每天的活動行為都會排放出二氧化碳嗎？只要您改變一點點習慣就可以減少溫室氣體的排放唷！馬上就來算算看您本月份的碳足跡吧！">
-    <meta property="og:image" content="http://carboncalc.initiumlab.com/images/cloth.svg">
+    <meta property="og:image" content="http://carboncalc.initiumlab.com/images/facebookshare.9d8483bd.png">
      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -28,12 +28,18 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <img style="width:50px; height:50px; position: absolute; opacity: 0" src="images/wechatshare.fc1ffa9c.png">
     <div id="lightbox">
       <button id="close">返回計算器</button>
       <div class="statement">您本月的碳排放量為 <span id="totalCarbon2"></span> kg CO2e</div>
       <div class="statement">占用了 <span id="treeNumber"></span> 棵树木</div>
       <div id="treeArea"></div>
-      <div class="share"> <a href="https://www.facebook.com/sharer.php?s=100&amp;u=http://carboncalc.initiumlab.com/" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600'); return false" title="分享到 facebook" class="facebook"></a> <a href="https://twitter.com/share?url=http://carboncalc.initiumlab.com/&amp;text=您知道每天的活動行為都會排放出二氧化碳嗎？只要您改變一點點習慣就可以減少溫室氣體的排放唷！馬上就來算算看您本月份的碳足跡吧！&amp;via=initiumnews" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600'); return false" title="分享到 twitter" class="twitter"></a> </div>
+      <div id="brandingArea">
+        <a class="logo" href="http://www.theinitium.com"></a>
+        <div class="line2">端傳媒</div>
+        <a href="https://www.facebook.com/sharer.php?s=100&amp;u=http://carboncalc.initiumlab.com/" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600'); return false" title="分享到 facebook" class="facebook share"></a>
+        <a href="https://twitter.com/share?url=http://carboncalc.initiumlab.com/&amp;text=您知道每天的活動行為都會排放出二氧化碳嗎？只要您改變一點點習慣就可以減少溫室氣體的排放唷！馬上就來算算看您本月份的碳足跡吧！&amp;via=initiumnews" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600'); return false" title="分享到 twitter" class="twitter share"></a> 
+      </div>
     </div>
     <div class="container">
 

@@ -226,7 +226,7 @@ $('#lightboxTrigger').click(function() {
     }
     $('#treeArea div:last-child').css("opacity", (treeNumber-parseInt(treeNumber)))
     $('#treeNumber').text(treeNumber)
-    if ((treeNumber > 18) && (treeNumber < 38)) {
+    if ((treeNumber > 15) && (treeNumber < 38)) {
         $('#treeArea div').addClass("narrow").removeClass("xnarrow")
     } else if (treeNumber >= 38){
         $('#treeArea div').removeClass("narrow").addClass("xnarrow")

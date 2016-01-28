@@ -25,8 +25,22 @@ h1 {
 .row {
 }
 
+#taiwan {
+  z-index: 50;
+  position: absolute;
+  width: 80px;
+  right: 10%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 2px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  margin-top: 50px;
+}
+
 .screen {
   margin-top: 120px;
+  z-index: 50;
 }
 
 .explain {
@@ -58,8 +72,8 @@ h1 {
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 /* Custom page header */
@@ -75,13 +89,18 @@ h1 {
   }
 }
 
-#totalNumber {
+#totalCarbon {
   font-size: 40px;
+}
+
+#totalCarbon2 {
+  font-size: 35px;
+  color: #3c6177;
+  font-weight: bold;
 }
 
 .jumbotron {
   position: fixed;
-  z-index: 50;
   left: 15px;
   top: 15px;
   right: 15px;
@@ -91,6 +110,8 @@ h1 {
   color: white;
   max-width: 730px;
   text-align: center;
+  height: 115px;
+  z-index: 50;
 }
 
 .cloth {
@@ -268,13 +289,14 @@ li a {
   }
 
   button:hover, button:focus {
-    color: white
+    color: white;
+    background-color: #82D6D8;
+    cursor: pointer;
   }
 }
 
 #lightbox {
   background-color: #e9f2e7;
-  z-index: 100;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -288,18 +310,18 @@ li a {
   padding: 30px;
   max-width: 730px;
   height:100%;
+  max-height:950px;
   text-align: center;
   display: none;
   font-size: 20px;
   .statement {
-    margin-top: 20%;
+    margin-top: 3%;
     span#treeNumber {
       font-size: 40px !important;
       color: #008283;
       font-weight: bold;
     }
   }
-
   .share {
     position: absolute;
     left: 30%;
@@ -329,13 +351,47 @@ li a {
   .share a:hover {
     opacity: 1;
   }
+  button {
+    height: 35px;
+    background-color: #3c6177;
+    color: white;
+    font-size: 15px !important;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    border: 0px solid white;
+    padding: 0 60px;
+    margin-bottom: 10%;
+  }
+  button:hover, button:focus {
+    background-color: #82D6D8;
+    cursor: pointer;
+  }
 }
 
 #treeArea {
-  margin-top: 40px;
-  img {
-  width: 130px;
+  margin: 10px auto;
+  width: 80%;
+  .tree {
+    background-image: url("../images/tree.svg");
+    background-size: 100% 100%;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
   }
+  .narrow {
+    width: 60px;
+    height: 60px;
+  }
+  .xnarrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+#versionControl1, #versionControl2, #versionControl9, #versionControl10, #versionControl11, #versionControl12 {
+    line-height: 15px;
+    color: grey;
+    font-size: 12px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -463,10 +519,43 @@ li a {
       }
     }
   }
-  #treeArea img {
-    width: 90px
+  #versionControl1, #versionControl2, #versionControl9, #versionControl10, #versionControl11, #versionControl12 {
+    font-size: 10px;
   }
-  #lightbox .share {
-    bottom: 10%;
+  #lightbox {
+    #treeArea {
+      .tree {
+        width: 50px;
+        height: 50px;
+      }
+      .narrow {
+        width: 30px !important;
+        height: 30px !important;
+      }
+      .xnarrow {
+        width: 20px !important;
+        height: 30px !important;
+      }  
+    }
+    .share {
+      bottom: 10%;
+    }
+    .share a.facebook {
+      width: 22px;
+      background-size: 20px 20px;
+    }
+    .share a.twitter {
+      width: 22px;
+      background-size: 20px 20px;
+    }
+    .statement {
+      font-size: 14px;
+      span#totalCarbon2 {
+        font-size: 24px !important;
+      }
+      span#treeNumber {
+        font-size: 24px !important;
+      }
+    }
   }
 }

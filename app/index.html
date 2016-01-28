@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta property="og:type" content="article"> <meta property="og:url" content="http://carboncalc.initiumlab.com/"> <meta property="og:title" content="碳排放計算器">
+    <meta property="og:description" content="您知道每天的活動行為都會排放出二氧化碳嗎？只要您改變一點點習慣就可以減少溫室氣體的排放唷！馬上就來算算看您本月份的碳足跡吧！">
+    <meta property="og:image" content="http://carboncalc.initiumlab.com/images/cloth.svg">
+     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -25,26 +28,22 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div id="lightbox">
+      <button id="close">返回計算器</button>
+      <div class="statement">您本月的碳排放量為 <span id="totalCarbon2"></span> kg CO2e</div>
+      <div class="statement">占用了 <span id="treeNumber"></span> 棵树木</div>
+      <div id="treeArea"></div>
+      <div class="share"> <a href="https://www.facebook.com/sharer.php?s=100&amp;u=http://carboncalc.initiumlab.com/" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600'); return false" title="分享到 facebook" class="facebook"></a> <a href="https://twitter.com/share?url=http://carboncalc.initiumlab.com/&amp;text=您知道每天的活動行為都會排放出二氧化碳嗎？只要您改變一點點習慣就可以減少溫室氣體的排放唷！馬上就來算算看您本月份的碳足跡吧！&amp;via=initiumnews" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600'); return false" title="分享到 twitter" class="twitter"></a> </div>
+    </div>
     <div class="container">
-      <!-- <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">carbon calculator jquery</h3>
-      </div> -->
 
-      <div id="lightbox">
-        <button id="close">返回计算器</button>
-        <div class="statement">您每日的碳排放量為占用了 <span id="treeNumber"></span> 棵树木</div>
-        <div id="treeArea"></div>
-        <div class="share"> <a href="https://www.facebook.com/sharer.php?s=100&amp;u=http://twelec2016.initiumlab.com/" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600'); return false" title="分享到 facebook" class="facebook"></a> <a href="https://twitter.com/share?url=http://twelec2016.initiumlab.com/&amp;text=台灣會不會實現第三次政黨輪替？華人世界會不會有第一位女總統？太陽花兵團能不能進軍立法院？2016大選，實時計票結果，就在端傳媒！&amp;via=initiumnews" onclick="window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600'); return false" title="分享到 twitter" class="twitter"></a> </div>
-      </div>
 
       <section class="screen">
         <div class="jumbotron center">
-          您本月的碳排放量为 <span id="totalNumber">0</span> kg CO2e
+          <button id="taiwan">轉台灣版</button>
+          <span id="announce">拖動圓形滑塊或者條形滑塊
+          <br>
+          選擇你衣食住行中的碳排放量</span>
         </div>
       </section>
 
@@ -90,8 +89,8 @@
         <div class="col-md-8 col-xs-8 house-slider bg-white">
           <input id="house1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house1Value" value="0">0</span>  度水</div>
           <input id="house2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house2Value" value="0">0</span>  度電</div>
-          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"></span><span class="notation" id="house3Value" value="0">0</span>  度煤氣</div>
-          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house4Value" value="0">0</span>  度石油氣</div>
+          <input id="house3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"></span><span class="notation" id="house3Value" value="0">0</span>  度<span id="versionControl1">煤氣</span></div>
+          <input id="house4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><div class="measure"><span class="notation" id="house4Value" value="0">0</span>  度<span id="versionControl2">石油氣</span></div>
         </div>
       </section>
 
@@ -102,68 +101,31 @@
           <div class="time explain">每日</div>
         </div>
         <div class="col-md-4 col-xs-4 transport-slider middle bg-grey">
-          <!-- <div class="btn-group btn-group-justified" role="group">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-info" id="mtr">MTR</button>
-            </div>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-info" id="taxi">的士</button>
-            </div>
-          </div>
-          <div class="btn-group btn-group-justified" role="group">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-info" id="mtr">巴士</button>
-            </div>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-info" id="taxi">私家車</button>
-            </div>
-          </div>
-          <div class="btn-group btn-group-justified" role="group">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-info" id="minibus">小巴</button>
-            </div>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-info" id="bike">單車</button>
-            </div>
-          </div> -->
-          <!-- <div class="btn-group dropup">
-            <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected">
-              MTR <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a id="mtr" class="selected">MTR</a></li>
-              <li><a id="taxi">的士</a></li>
-              <li><a id="bus">巴士</a></li>
-              <li><a id="minibus">小巴</a></li>
-              <li><a id="car">私家車</a></li>
-              <li><a id="bike">單車</a></li>
-            </ul>
-          </div> -->
-          <input id="transport1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">MTR</span>
-          <div class="measure"><span class="notation" id="transport1Value" value="0">0</span>  元</div>
-          <input id="transport2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">巴士</span>
-          <div class="measure"><span class="notation" id="transport2Value" value="0">0</span>  元</div>
-          <input id="transport3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">小巴</span>
-          <div class="measure"></span><span class="notation" id="transport3Value" value="0">0</span>  元</div>
+          <input id="transport1" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool" id="versionControl3">MTR</span>
+          <div class="measure"><span class="notation" id="transport1Value" value="0">0</span>  <span id="versionControl9"> 元</span></div>
+          <input id="transport2" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool" id="versionControl4">巴士</span>
+          <div class="measure"><span class="notation" id="transport2Value" value="0">0</span>  <span id="versionControl10"> 元</span></div>
+          <input id="transport3" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool" id="versionControl5">小巴</span>
+          <div class="measure"></span><span class="notation" id="transport3Value" value="0">0</span>  <span id="versionControl11"> 元</span></div>
         </div>
         <div class="col-md-4 col-xs-4 middle bg-grey transport-slider">
           <!-- <div class="rdSlider center" id="transport"></div>
           <div id="transportnote">所花費用</div> -->
-          <input id="transport4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">的士</span>
-          <div class="measure"><span class="notation" id="transport4Value" value="0">0</span>  元</div>
-          <input id="transport5" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">私家車</span>
+          <input id="transport4" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool" id="versionControl6">的士</span>
+          <div class="measure"><span class="notation" id="transport4Value" value="0">0</span> <span id="versionControl12"> 元</span></div>
+          <input id="transport5" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool" id="versionControl7">私家車</span>
           <div class="measure"><span class="notation" id="transport5Value" value="0">0</span>  km</div>
-          <input id="transport6" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool">單車</span>
+          <input id="transport6" class="verticleSlider" data-slider-id='ex1Slider' type="text"/><span class="tool" id="versionControl8">單車</span>
           <div class="measure"><span class="notation" id="transport6Value" value="0">0</span>  km</div>
         </div>
       </section>
 
       <section class="result row">
-        <button id="lightboxTrigger" type="button" class="btn btn-lg btn-block">查看计算结果</button>
+        <button id="lightboxTrigger" type="button" class="btn btn-lg btn-block">查看計算結果</button>
       </section>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Initium Lab</p>
+        <p><span class="glyphicon glyphicon-heart"></span> 資料來源：綠色和平香港分部，臺灣行政院環境保護署，世界自然基金會香港分會</p>
       </div>
 
       
@@ -207,7 +169,7 @@
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+      ga('create','UA-66625644-18');ga('send','pageview');
     </script>
   </body>
 </html>
